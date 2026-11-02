@@ -1,5 +1,6 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Post, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service.js';
+import {WebStuffDto} from './wbstuff.dto.js'
 
 @Controller()
 export class AppController {
@@ -9,7 +10,22 @@ export class AppController {
   @Render('index')
   getHello() {
     return {
-      title: 'My First NestJS App'
+      title: 'My First NestJS Ap'
     }
+  }
+
+  
+@Get('webstuff')
+@Render('webstuff')
+getWebStuff() {
+  
+}
+
+  @Post('webstuff')
+  @Render('webstuff')
+  WebStuff() {
+    const orderedStuff: WebStuffDto[] = []
+
+
   }
 }
